@@ -1,8 +1,5 @@
 import * as React from "react";
-import { Truck } from "lucide-react";
-import { LayoutDashboard } from "lucide-react";
-import { FileText } from "lucide-react";
-
+import { Truck, LayoutDashboard, FileText } from "lucide-react";
 import {
   Sidebar,
   SidebarContent,
@@ -11,23 +8,15 @@ import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
-  SidebarMenuSub,
-  SidebarMenuSubButton,
-  SidebarMenuSubItem,
-  SidebarInset,
-  SidebarProvider,
 } from "@/components/ui/sidebar";
 
-// This is sample data.
-const data = {
-  navMain: [
-    { title: "Dashboard", url: "#", icon: <LayoutDashboard></LayoutDashboard> },
-    { title: "Document Hub", url: "#", icon: <FileText></FileText> },
-    { title: "Trucks", url: "#", icon: <Truck></Truck> },
-  ],
-};
+const navMain = [
+  { title: "Dashboard", url: "#", icon: <LayoutDashboard /> },
+  { title: "Document Hub", url: "#", icon: <FileText /> },
+  { title: "Trucks", url: "#", icon: <Truck /> },
+];
 
-export default function AppSidebar({ ...props }) {
+export default function AppSidebar(props) {
   return (
     <Sidebar
       variant="floating"
@@ -58,7 +47,7 @@ export default function AppSidebar({ ...props }) {
       <SidebarContent>
         <SidebarGroup>
           <SidebarMenu className="gap-2">
-            {data.navMain.map((item) => (
+            {navMain.map((item) => (
               <SidebarMenuItem key={item.title}>
                 <SidebarMenuButton asChild>
                   <a href={item.url} className="font-medium">
@@ -66,17 +55,6 @@ export default function AppSidebar({ ...props }) {
                     {item.title}
                   </a>
                 </SidebarMenuButton>
-                {/* {item.items?.length ? (
-                  <SidebarMenuSub className="ml-0 border-l-0 px-1.5">
-                    {item.items.map((item) => (
-                      <SidebarMenuSubItem key={item.title}>
-                        <SidebarMenuSubButton asChild isActive={item.isActive}>
-                          <a href={item.url}>{item.title}</a>
-                        </SidebarMenuSubButton>
-                      </SidebarMenuSubItem>
-                    ))}
-                  </SidebarMenuSub>
-                ) : null} */}
               </SidebarMenuItem>
             ))}
           </SidebarMenu>

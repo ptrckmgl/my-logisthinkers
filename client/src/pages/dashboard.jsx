@@ -1,7 +1,7 @@
 import AppSidebar from "@/components/app-sidebar";
 import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar";
-import CardStats from "@/components/card-stats";
 import { LayoutDashboard } from "lucide-react";
+import CardStats from "@/components/card-stats";
 
 export default function Dashboard() {
   return (
