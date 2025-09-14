@@ -1,5 +1,5 @@
 import * as React from "react";
-import { HeartIcon, Truck } from "lucide-react";
+import { Truck } from "lucide-react";
 import { LayoutDashboard } from "lucide-react";
 import { FileText } from "lucide-react";
 
@@ -14,6 +14,8 @@ import {
   SidebarMenuSub,
   SidebarMenuSubButton,
   SidebarMenuSubItem,
+  SidebarInset,
+  SidebarProvider,
 } from "@/components/ui/sidebar";
 
 // This is sample data.
@@ -25,7 +27,7 @@ const data = {
   ],
 };
 
-export function AppSidebar({ ...props }) {
+export default function AppSidebar({ ...props }) {
   return (
     <Sidebar
       variant="floating"
