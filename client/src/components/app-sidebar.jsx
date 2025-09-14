@@ -1,6 +1,7 @@
 import * as React from "react";
-import { Truck } from "lucide-react";
+import { HeartIcon, Truck } from "lucide-react";
 import { LayoutDashboard } from "lucide-react";
+import { FileText } from "lucide-react";
 
 import {
   Sidebar,
@@ -18,15 +19,24 @@ import {
 // This is sample data.
 const data = {
   navMain: [
-    { title: "Dashboard", url: "#" },
-    { title: "Document Hub", url: "#" },
-    { title: "Trucks", url: "#" },
+    { title: "Dashboard", url: "#", icon: <LayoutDashboard></LayoutDashboard> },
+    { title: "Document Hub", url: "#", icon: <FileText></FileText> },
+    { title: "Trucks", url: "#", icon: <Truck></Truck> },
   ],
 };
 
 export function AppSidebar({ ...props }) {
   return (
-    <Sidebar variant="floating" {...props}>
+    <Sidebar
+      variant="floating"
+      style={{
+        "--sidebar-width": "13rem",
+        height: "35rem",
+        position: "absolute",
+        top: "6rem",
+        left: "2rem",
+      }}
+      {...props}>
       <SidebarHeader>
         <SidebarMenu>
           <SidebarMenuItem>
@@ -50,10 +60,11 @@ export function AppSidebar({ ...props }) {
               <SidebarMenuItem key={item.title}>
                 <SidebarMenuButton asChild>
                   <a href={item.url} className="font-medium">
+                    {item.icon}
                     {item.title}
                   </a>
                 </SidebarMenuButton>
-                {item.items?.length ? (
+                {/* {item.items?.length ? (
                   <SidebarMenuSub className="ml-0 border-l-0 px-1.5">
                     {item.items.map((item) => (
                       <SidebarMenuSubItem key={item.title}>
@@ -63,7 +74,7 @@ export function AppSidebar({ ...props }) {
                       </SidebarMenuSubItem>
                     ))}
                   </SidebarMenuSub>
-                ) : null}
+                ) : null} */}
               </SidebarMenuItem>
             ))}
           </SidebarMenu>
