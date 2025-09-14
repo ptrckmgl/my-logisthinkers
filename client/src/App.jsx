@@ -1,3 +1,8 @@
+// To run server:
+// 1. enter in terminal: cd client
+// 2. enter in terminal: npm run dev
+// 3. ctrl + click the Local: http://localhost:5173/
+
 import { AppSidebar } from "@/components/app-sidebar";
 import {
   Breadcrumb,
