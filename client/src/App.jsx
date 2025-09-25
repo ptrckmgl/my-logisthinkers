@@ -6,5 +6,5 @@ import Dashboard from "./pages/dashboard";
 import LoginPage from "./pages/login";
 
 export default function App() {
-  return <LoginPage />;
+  return <Dashboard />;
 }

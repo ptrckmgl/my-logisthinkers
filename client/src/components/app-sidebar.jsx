@@ -1,65 +1,76 @@
+"use client";
+
 import * as React from "react";
-import { Truck, LayoutDashboard, FileText } from "lucide-react";
+import { BookOpen, Bot, Settings2, SquareTerminal, Truck, LayoutDashboard, FilePlus, Archive } from "lucide-react";
+
+import { NavMain } from "@/components/nav-main";
+import { NavUser } from "@/components/nav-user";
+// import { TeamSwitcher } from "@/components/team-switcher";
 import {
   Sidebar,
   SidebarContent,
-  SidebarGroup,
+  SidebarFooter,
   SidebarHeader,
+  SidebarRail,
   SidebarMenu,
-  SidebarMenuButton,
   SidebarMenuItem,
+  SidebarMenuButton,
 } from "@/components/ui/sidebar";
 
-const navMain = [
-  { title: "Dashboard", url: "#", icon: <LayoutDashboard /> },
-  { title: "Document Hub", url: "#", icon: <FileText /> },
-  { title: "Trucks", url: "#", icon: <Truck /> },
-];
+// This is sample data.
+const data = {
+  user: {
+    name: "Maverick",
+    email: "maverick@gmail.com",
+    avatar: "/avatars/shadcn.jpg",
+  },
+  navMain: [
+    {
+      title: "Dashboard",
+      url: "#",
+      icon: LayoutDashboard,
+      isActive: true,
+    },
+    {
+      title: "Smart Create",
+      url: "#",
+      icon: FilePlus,
+    },
+    {
+      title: "Rentals",
+      url: "#",
+      icon: Truck,
+    },
+    {
+      title: "DocHub",
+      url: "#",
+      icon: Archive,
+    },
+  ],
+};
 
-export default function AppSidebar(props) {
+export function AppSidebar({ ...props }) {
   return (
-    <Sidebar
-      variant="floating"
-      style={{
-        "--sidebar-width": "13rem",
-        height: "35rem",
-        position: "absolute",
-        top: "6rem",
-        left: "2rem",
-      }}
-      {...props}>
+    <Sidebar collapsible="icon" {...props}>
       <SidebarHeader>
         <SidebarMenu>
           <SidebarMenuItem>
-            <SidebarMenuButton size="lg" asChild>
+            <SidebarMenuButton asChild className="data-[slot=sidebar-menu-button]:!p-1.5 mt-2">
               <a href="#">
-                <div className="bg-sidebar-primary text-sidebar-primary-foreground flex aspect-square size-8 items-center justify-center rounded-lg">
-                  <Truck className="size-4" />
-                </div>
-                <div className="flex flex-col gap-0.5 leading-none">
-                  <span className="font-medium">Logisthinkers</span>
-                </div>
+                <Truck className="!size-5" />
+                <span className="text-base font-semibold">JLJ Transport Logistics</span>
               </a>
             </SidebarMenuButton>
           </SidebarMenuItem>
         </SidebarMenu>
       </SidebarHeader>
       <SidebarContent>
-        <SidebarGroup>
-          <SidebarMenu className="gap-2">
-            {navMain.map((item) => (
-              <SidebarMenuItem key={item.title}>
-                <SidebarMenuButton asChild>
-                  <a href={item.url} className="font-medium">
-                    {item.icon}
-                    {item.title}
-                  </a>
-                </SidebarMenuButton>
-              </SidebarMenuItem>
-            ))}
-          </SidebarMenu>
-        </SidebarGroup>
+        <NavMain items={data.navMain} />
       </SidebarContent>
+      <SidebarFooter>
+        <NavUser user={data.user} />
+      </SidebarFooter>
+      <SidebarRail />
     </Sidebar>
   );
 }
