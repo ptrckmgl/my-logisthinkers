@@ -3,8 +3,8 @@
 import * as React from "react";
 import { BookOpen, Bot, Settings2, SquareTerminal, Truck, LayoutDashboard, FilePlus, Archive } from "lucide-react";
 
-import { NavMain } from "@/components/nav-main";
-import { NavUser } from "@/components/nav-user";
+import { NavMain } from "./nav-main";
+import { NavUser } from "./nav-user";
 // import { TeamSwitcher } from "@/components/team-switcher";
 import {
   Sidebar,
@@ -51,7 +51,7 @@ const data = {
 
 export function AppSidebar({ ...props }) {
   return (
-    <Sidebar collapsible="icon" {...props}>
+    <Sidebar collapsible="icon" style={{}} {...props}>
       <SidebarHeader>
         <SidebarMenu>
           <SidebarMenuItem>

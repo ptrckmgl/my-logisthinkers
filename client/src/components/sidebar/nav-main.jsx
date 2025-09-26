@@ -7,7 +7,7 @@ import {
   SidebarMenuSub,
   SidebarMenuSubButton,
   SidebarMenuSubItem,
-} from "@/components/ui/sidebar";
+} from "../ui/sidebar";
 
 export function NavMain({ items }) {
   return (
@@ -19,17 +19,6 @@ export function NavMain({ items }) {
               {item.icon && <item.icon />}
               <span>{item.title}</span>
             </SidebarMenuButton>
-            <SidebarMenuSub>
-              {item.items?.map((subItem) => (
-                <SidebarMenuSubItem key={subItem.title}>
-                  <SidebarMenuSubButton asChild>
-                    <a href={subItem.url}>
-                      <span>{subItem.title}</span>
-                    </a>
-                  </SidebarMenuSubButton>
-                </SidebarMenuSubItem>
-              ))}
-            </SidebarMenuSub>
           </SidebarMenuItem>
         ))}
       </SidebarMenu>

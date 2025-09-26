@@ -1,6 +1,6 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/card";
 
-function CardStats() {
+export function CardStats() {
   return (
     <>
       <Card className="w-64 shadow-none bg-muted">
@@ -45,5 +45,3 @@ function CardStats() {
     </>
   );
 }
-
-export default CardStats;
