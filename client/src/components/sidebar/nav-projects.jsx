@@ -1,7 +1,5 @@
 "use client";
-
 import { Folder, Forward, MoreHorizontal, Trash2 } from "lucide-react";
-
 import {
   DropdownMenu,
   DropdownMenuContent,

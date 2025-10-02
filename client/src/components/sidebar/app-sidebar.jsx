@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { BookOpen, Bot, Settings2, SquareTerminal, Truck, LayoutDashboard, FilePlus, Archive } from "lucide-react";
+import { Truck, LayoutDashboard, FilePlus, Archive } from "lucide-react";
 
 import { NavMain } from "./nav-main";
 import { NavUser } from "./nav-user";
